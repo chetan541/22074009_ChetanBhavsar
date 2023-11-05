@@ -1,0 +1,57 @@
+{% extends "review/base.html" %}
+
+{% block content %}
+<style>
+            .big{
+        display: flex;
+        height: 60%;
+        flex-wrap: wrap;
+        /* width: 100%; */
+        justify-content:space-around;
+        /* align-items: center; */
+
+
+    }
+    .small{
+        
+        margin: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust the shadow effect */
+        border-radius: 10px;
+        border: 1px solid black;
+        transition: transform 0.3s;
+        background-color: white;
+    }
+    .small:hover {
+        box-shadow: 5px 5px 10px  wheat;
+        transform: scale(1.1); /* Increase the scale to create a zoom effect */
+    }
+    .img{
+        display: block;
+        border-radius: 10px;
+    }
+    .name1{
+        color: black;
+        font-size: 20px;
+         text-align: center;
+        padding-top: 10px;
+         padding-bottom: 10px;
+    }
+</style>
+<div class="big">
+    {% for i in movies_list %}
+    <a href="{% url 'key' i.m_name %}">
+        <div class="small">
+      <img src="{{ i.portrait }}" alt="" height="270px" class="img">
+       <div class="name1">
+
+           {{ i.m_name }}
+       </div>
+     </div>
+    </a>
+       
+    {% empty %}
+        <a href="{% url 'home' %}"></a>
+        
+    {% endfor %}
+</div>
+{% endblock %}

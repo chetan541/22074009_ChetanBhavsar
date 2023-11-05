@@ -1,0 +1,160 @@
+/* ---------------Navbar---------------------------------- */
+
+
+.link:hover {
+    background-color: #ddd;
+    color: #a91e1e !important; /* Change this color to your desired hover color */
+}
+.custom-navbar {
+      background-color: rgb(13, 13, 12) !important; /* Change this to the desired background color */
+      /* position: fixed;  */
+      /* position: -webkit-sticky;
+      position: sticky; */
+      /* top: 0%; */
+      /* overflow: hidden; */
+}
+ 
+.navbar-light .navbar-nav  .link .nav-link {
+    color: rgba(234, 232, 232, 0.965) !important;
+}
+.title{
+    color: rgba(214, 211, 211, 0.965);
+}
+
+/* ---------------Navbar---------------------------------- */
+
+/* ---------------FOOTER---------------------------------- */
+.d-flex{
+    background-color: rgba(244, 244, 228, 0.857);
+    
+}
+
+.custom-search {
+    width: 500px; /* Adjust the width to your desired size */
+    height: 40px; /* Adjust the height to your desired size */
+    border-radius: 0.6rem;
+    color: yellow ;
+    background-color: #faf5f5 ;
+}
+.content{
+    height: 1000px;
+    
+}
+.footer{
+    background-color: #102242;
+    height: 320px;
+    width: 100%;
+    font-family: var(--bs-body-font-family);
+    position: relative;
+}
+.contributor{
+    /* background-color: #a91e1e; */
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    /* padding-bottom: 1px; */
+}
+.left-footer{
+    display: inline-block;
+    /* float: left; */
+    color: white;
+    /* background-color:white; */
+    width: 50%;
+    height: 250px;
+    /* padding: 30px; */
+    /* margin-right: 10px; */
+     left:0;
+    position: absolute; 
+}
+.line {
+    border-left: 1px solid #f7eeee; /* Adjust the color and thickness of the line */
+    background-color: #a91e1e;
+    height: 215px; /* Adjust the height as needed to match the elements */
+    display: inline-block;
+    /* margin: 0 10px;  */
+    /* Adjust the margin to control spacing */
+    left: 50%;
+    position: absolute;
+}
+.right-footer{
+    /* float: left; */
+    display: inline-block;
+    color: white;
+    /* background-color: #a91e1e; */
+    width: 50%;
+    height: 250px;
+    /* padding: 30px; */
+    left:50%;
+    position: absolute;
+}
+.name{
+    /* background-color: white; */
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.linkedin{
+    /* background-color: #c0ccb0; */
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.instagram{
+    /* background-color: #a8a53f; */
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.portfolio{
+    /* background-color: #9414a0; */
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.top-footer{
+    display: inline;
+    /* display: inline block; */
+}
+.bottom-footer {
+        position: absolute;
+         width: 100%;
+         background-color:#102242;
+         color: #fff;
+         text-align: center;
+         bottom: 0%;
+         /* padding: 10px; */
+}
+#iitbhu{
+    display: inline-block;
+    background-color: white;
+    height: 20px;
+}
+/* ---------------FOOTER---------------------------------- */
+
+/* ---------------SignUp and LoginPage---------------------- */
+ 
+.heading{
+    text-align: center;
+    font-weight: bold;
+    font-style:oblique;
+    color: white;
+}
+/* .box{
+    border: 2px solid rgb(233, 225, 225);
+    border-radius: 10px;
+    text-align: center;
+    width: 50%;
+    margin-top: 75px;
+    margin-bottom: 50px;
+    margin-left: 350px;
+    margin-right:300px ;
+}
+.text{
+    margin-left: 80px;
+    margin-right: 80px;
+} */

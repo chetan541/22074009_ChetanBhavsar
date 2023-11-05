@@ -1,0 +1,145 @@
+{% extends "review/base.html" %}
+{% load static %}
+{% block content %}
+<style>
+    .big{
+        display: flex;
+        height: 60%;
+        flex-wrap: wrap;
+        /* width: 100%; */
+        justify-content:space-around;
+        /* align-items: center; */
+
+
+    }
+    .small{
+        
+        margin: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust the shadow effect */
+        border-radius: 10px;
+        border: 1px solid black;
+        background-color: white;
+        transition: transform 0.3s;
+    }
+    .small:hover {
+        transform: scale(1.1); /* Increase the scale to create a zoom effect */
+        box-shadow: 5px 5px 10px  wheat;
+    }
+    .img{
+        display: block;
+        border-radius: 10px;
+    }
+    .h{
+        text-align: center;
+        font-style: italic;
+        color:white;
+    }
+    .name1{
+        color: black;
+        font-size: 20px;
+         text-align: center;
+        padding-top: 10px;
+         padding-bottom: 10px;
+    }
+    #carouselExampleCaptions {
+        height: 100%;
+    }
+    
+    .d-block{
+        width: 100%;
+    }
+    @media(max-width:414px){
+        .d-block{
+            height: 50%  !important;
+        }
+    }
+</style>
+<!-- Carousel -->
+<div id="carouselExampleCaptions"  class="carousel slide" data-ride="carousel" data-interval="3000"> <!-- Adjust the interval as needed (3000ms = 3 seconds) -->
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="{% url 'key' 'Batman' %}">
+            <img src="{% static 'review/batman.jpg' %}" class="d-block vh-100 vw-100"alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Batman</h5>
+            </div>
+        </a>
+        </div>
+        <div class="carousel-item">
+            <a href="{% url 'key' 'The Neverending Story III'%}">
+            <img src="https://image.tmdb.org/t/p/original/2IqXJIR1i0f6Ngq3A6rjXhQNqFc.jpg" class="d-block vh-100 vw-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>The Neverending Story III</h5>
+            </div>
+        </a>
+        </div>
+        <div class="carousel-item">
+            <a href="{% url 'key' 'Toy Story' %}">
+            <img src=" https://image.tmdb.org/t/p/original/9FBwqcd9IRruEDUrTdcaafOMKUq.jpg" class="d-block vh-100 vw-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Toy Story</h5>
+            </div>
+        </a>
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </a>
+</div>
+
+<!-- Carousel end -->
+
+<h1 class="h">Top Movies</h1>
+
+
+<div class="big">
+ <!-- ---------- -->
+ {% if key %}
+ {% for blog in blogs %}
+ {% if key == blog.genre %}
+
+    
+        <a href="review/movie/{{ i.m_name }}/">
+        <div class="small">
+      <img src="{{ i.portrait }}" alt="" height="270px" class="img">
+      {{ i.m_name }}
+     </div>
+    </a>
+
+ {% endif %}
+ {% endfor %}
+
+<!-- ---------- -->
+{% else %}
+{% for i in blog|slice:":10" %}
+   <a href="review/movie/{{ i.m_name }}/">
+    <div class="small">
+        <img src="{{ i.portrait }}" alt="" height="270px" class="img">
+        <div class="name1">
+
+            {{ i.m_name }}
+        </div>
+    </div>
+   </a>
+
+    
+
+{% endfor %}
+
+{% endif %}
+</div>
+
+   
+
+
+{% endblock %}

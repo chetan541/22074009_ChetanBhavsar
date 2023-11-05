@@ -1,0 +1,102 @@
+{% extends "review/base.html" %}
+
+{% block content %}
+ <!-- Your Carousel Code -->
+
+<!-- Your Carousel Code -->
+<style>
+    .big{
+        display: flex;
+        height: 60%;
+        flex-wrap: wrap;
+        /* width: 100%; */
+        justify-content:space-around;
+        /* align-items: center; */
+
+
+    }
+    .small{
+        
+        margin: 10px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adjust the shadow effect */
+        border-radius: 10px;
+        border: 1px solid black;
+        background-color: white;
+        transition: transform 0.3s;
+    }
+    .small:hover {
+        transform: scale(1.1); /* Increase the scale to create a zoom effect */
+        box-shadow: 5px 5px 10px wheat;
+        
+    }
+    .img{
+        display: block;
+        border-radius: 10px;
+    }
+    .h{
+        text-align: center;
+        font-style: italic;
+        color:white;
+    }
+    .heading{
+        align-items: center;
+        text-transform: uppercase;
+       
+    }
+        .name1{
+        color: black;
+        font-size: 20px;
+         text-align: center;
+        padding-top: 10px;
+         padding-bottom: 10px;
+    }
+</style>
+
+<div class="heading">
+    
+    <h1 class="h">{{key}}</h1>
+</div>
+
+<div class="big">
+ <!-- ---------- -->
+
+ {% for i in blogs %}
+  {% if key == i.genre  %}
+
+  <a href="{% url 'key' i.m_name %}">
+        <div class="small">
+      <img src="{{ i.portrait }}" alt="" height="270px" class="img">
+      <div class="name1">
+
+          {{ i.m_name }}
+      </div>
+     </div>
+    </a>
+
+  {% else %}
+  {% if key == i.release_year|stringformat:"d" %}
+
+  <a href="{% url 'key' i.m_name %}">
+        <div class="small">
+      <img src="{{ i.portrait }}" alt="" height="270px" class="img">
+       <div class="name1">
+
+           {{ i.m_name }}
+       </div>
+     </div>
+    </a>
+
+  {% endif %}
+  {% endif %}
+ {% endfor %}
+
+<!-- ---------- -->
+
+
+
+</div>
+
+   
+
+
+{% endblock %}
